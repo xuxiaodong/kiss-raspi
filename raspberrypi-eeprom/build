@@ -1,0 +1,14 @@
+#!/bin/sh -e
+
+patch rpi-eeprom-update < rpi-eeprom-update.patch
+
+install -d -m 755 "$1/usr/bin"
+install -D -m 755 firmware/vl805 "$1/usr/bin/vl805"
+install -D -m 755 rpi-eeprom-config "$1/usr/bin/rpi-eeprom-config"
+install -D -m 755 rpi-eeprom-update "$1/usr/bin/rpi-eeprom-update"
+
+install -d -m 755 "$1/usr/lib/firmware/raspberrypi/bootloader"
+cp -a firmware/* "$1/usr/lib/firmware/raspberrypi/bootloader"
+
+install -d -m 755 "$1/etc/default"
+install -D -m 644 rpi-eeprom-update-default "$1/etc/default/rpi-eeprom-update"

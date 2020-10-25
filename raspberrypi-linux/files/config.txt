@@ -1,0 +1,17 @@
+# See /boot/overlays/README for all available options
+# https://www.raspberrypi.org/documentation/configuration/config-txt/
+
+gpu_mem=64
+initramfs initramfs-linux.img followkernel
+kernel=kernel8.img
+arm_64bit=1
+enable_gic=1
+disable_overscan=1
+
+# Enable sound
+dtparam=audio=on
+hdmi_drive=2
+
+# Enable vc4
+dtoverlay=vc4-fkms-v3d
+max_framebuffers=2

@@ -1,0 +1,5 @@
+#!/bin/sh -e
+
+install -d "$1/usr/lib/firmware/brcm" "$1/usr/share/alsa/cards/"
+install -m 0644 *.bin *.txt *.clm_blob *.hcd "$1/usr/lib/firmware/brcm"
+install -m 0644 RPi-WM8804.conf "$1/usr/share/alsa/cards/"

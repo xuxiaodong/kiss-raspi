@@ -1,0 +1,8 @@
+https://archlinuxarm.org/builder/src/bcm43430/7.45.98.38/brcmfmac43430-sdio.bin
+https://archlinuxarm.org/builder/src/bcm43430/7.45.98.38/brcmfmac43430-sdio.txt
+https://raw.githubusercontent.com/RPi-Distro/bluez-firmware/master/broadcom/BCM43430A1.hcd
+https://archlinuxarm.org/builder/src/bcm43455/7.45.154/brcmfmac43455-sdio.bin
+https://archlinuxarm.org/builder/src/bcm43455/7.45.154/brcmfmac43455-sdio.clm_blob
+https://archlinuxarm.org/builder/src/bcm43455/7.45.154/brcmfmac43455-sdio.txt
+https://raw.githubusercontent.com/RPi-Distro/bluez-firmware/master/broadcom/BCM4345C0.hcd
+files/RPi-WM8804.conf

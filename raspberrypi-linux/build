@@ -1,0 +1,21 @@
+#!/bin/sh -e
+
+cat config > ./.config
+
+sed -ri "s|^(EXTRAVERSION =)(.*)|\1 \2-1|" Makefile
+
+make Image modules dtbs
+
+install -d "$1/boot/overlays"
+install -d "$1/usr/lib/modules"
+
+make INSTALL_MOD_PATH="$1/usr" modules_install
+
+install arch/arm64/boot/dts/broadcom/bcm2711-rpi-4-b.dtb "$1/boot"
+install arch/arm64/boot/dts/broadcom/bcm2710-rpi-3-b-plus.dtb "$1/boot"
+install arch/arm64/boot/dts/broadcom/bcm2710-rpi-3-b.dtb "$1/boot"
+install arch/arm64/boot/Image "$1/boot/kernel8.img"
+install arch/arm64/boot/dts/overlays/*.dtbo* "$1/boot/overlays"
+install arch/arm64/boot/dts/overlays/README "$1/boot/overlays"
+
+install -m644 config.txt cmdline.txt "$1/boot"
