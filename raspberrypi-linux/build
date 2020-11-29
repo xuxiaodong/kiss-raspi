@@ -12,6 +12,7 @@ install -d "$1/usr/lib/modules"
 make INSTALL_MOD_PATH="$1/usr" modules_install
 
 install arch/arm64/boot/dts/broadcom/bcm2711-rpi-4-b.dtb "$1/boot"
+install arch/arm64/boot/dts/broadcom/bcm2711-rpi-400.dtb "$1/boot"
 install arch/arm64/boot/dts/broadcom/bcm2710-rpi-3-b-plus.dtb "$1/boot"
 install arch/arm64/boot/dts/broadcom/bcm2710-rpi-3-b.dtb "$1/boot"
 install arch/arm64/boot/Image "$1/boot/kernel8.img"
