@@ -1,8 +1,0 @@
-#!/bin/sh -e
-
-sed -i -e 's/sudo //;s/pushd/cd/;s/popd/cd -/' buildme
-
-./buildme --aarch64 "$1"
-
-install -Dm644 10-vchiq.rules "$1/etc/udev/rules.d"
-install -Dm644 raspberrypi-userland.conf "$1/etc/ld.so.conf.d"
