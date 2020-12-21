@@ -1,11 +1,11 @@
 #!/bin/sh -e
 
-install -d "$1/usr/lib/firmware/bcm/brcm" "$1/usr/share/alsa/cards"
-install -m 0644 *.hcd "$1/usr/lib/firmware/bcm/brcm"
-install -m 0644 brcm/* "$1/usr/lib/firmware/bcm/brcm"
-install -m 0644 RPi-WM8804.conf "$1/usr/share/alsa/cards/"
+install -d "$1/usr/lib/firmware/brcm" "$1/usr/share/alsa/cards"
+install -m 0644 *.hcd "$1/usr/lib/firmware/brcm"
+install -m 0644 brcm/* "$1/usr/lib/firmware/brcm"
+install -m 0644 RPi-WM8804.conf "$1/usr/share/alsa/cards"
 
-cd "$1/usr/lib/firmware/bcm/brcm"
+cd "$1/usr/lib/firmware/brcm"
 ln -s ./brcmfmac43456-sdio.txt ./brcmfmac43456-sdio.raspberrypi,400.txt
 ln -s ./brcmfmac43456-sdio.txt ./brcmfmac43456-sdio.raspberrypi,4-compute-module.txt
 ln -s ./brcmfmac43455-sdio.bin ./brcmfmac43455-sdio.raspberrypi,3-model-a-plus.txt
